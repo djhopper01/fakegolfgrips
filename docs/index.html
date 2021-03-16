@@ -1,0 +1,31 @@
+---
+permalink: /
+title: Welcome to my docs
+---
+
+<table class="border-collapse border border-gray-400">
+  <thead>
+    <tr>
+      <th class="border-collapse border border-gray-400 px-2 py-1">Seller</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1">Title</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1">Location</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1">Created on</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for seller in site.data.sellers %}
+    <tr>
+      <td class="border-collapse border border-gray-400 px-2 py-1">
+        <a href="{{ seller.profile }}" target="_blank" class="text-blue-700 hover:underline">
+          {{ seller.username }}
+        </a>
+      </td>
+      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.title }}</td>
+      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.location }}</td>
+      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.created_on }}</td>
+      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.price }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
