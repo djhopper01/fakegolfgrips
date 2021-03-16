@@ -6,11 +6,13 @@ title: Welcome to my docs
 <table class="border-collapse border border-gray-400">
   <thead>
     <tr>
-      <th class="border-collapse border border-gray-400 px-2 py-1">Seller</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1">Title</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1">Location</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1">Created on</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1">Price</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Seller</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Title</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Location</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Created on</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Price</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Retail</th>
+      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Discount</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +27,8 @@ title: Welcome to my docs
       <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.location }}</td>
       <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.created_on }}</td>
       <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.price }}</td>
+      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.retail }}</td>
+      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.discount }}</td>
     </tr>
   {% endfor %}
   </tbody>
