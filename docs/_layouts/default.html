@@ -50,12 +50,18 @@
         </div>
       </section>
     </div>
+
+    <footer class="py-24 text-gray-600 text-center">
+      Created by <a href="https://twitter.com/derekjhopper" class="underline">@derekjhopper</a>.
+    </footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tablesorter@2.31.3/dist/js/jquery.tablesorter.combined.min.js"></script>
   <script>
-    $("table").tablesorter();
+    $("table").tablesorter({
+      sortList: [[0,0]]
+    });
   </script>
 </body>
 
