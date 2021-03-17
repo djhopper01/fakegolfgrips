@@ -3,33 +3,35 @@ permalink: /
 title: Welcome to my docs
 ---
 
-<table class="border-collapse border border-gray-400">
-  <thead>
-    <tr>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Seller</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Title</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Location</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Created on</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Price</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Retail</th>
-      <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Discount</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for seller in site.data.sellers %}
-    <tr>
-      <td class="border-collapse border border-gray-400 px-2 py-1">
-        <a href="{{ seller.profile }}" target="_blank" class="text-blue-700 hover:underline">
-          {{ seller.username }}
-        </a>
-      </td>
-      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.title }}</td>
-      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.location }}</td>
-      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.created_on }}</td>
-      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.price }}</td>
-      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.retail }}</td>
-      <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.discount }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
+<div class="overflow-x-scroll">
+  <table class="border-collapse border border-gray-400">
+    <thead>
+      <tr>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Seller</th>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Title</th>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Location</th>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Created on</th>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Price</th>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Retail</th>
+        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for seller in site.data.sellers %}
+      <tr>
+        <td class="border-collapse border border-gray-400 px-2 py-1">
+          <a href="{{ seller.profile }}" target="_blank" class="text-blue-700 hover:underline">
+            {{ seller.username }}
+          </a>
+        </td>
+        <td class="border-collapse border border-gray-400 px-2 py-1 whitespace-nowrap">{{ seller.title }}</td>
+        <td class="border-collapse border border-gray-400 px-2 py-1 whitespace-nowrap">{{ seller.location }}</td>
+        <td class="border-collapse border border-gray-400 px-2 py-1 whitespace-nowrap">{{ seller.created_on }}</td>
+        <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.price }}</td>
+        <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.retail }}</td>
+        <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.discount }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
