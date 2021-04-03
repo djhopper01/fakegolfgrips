@@ -4,38 +4,42 @@ title: Welcome to my docs
 ---
 
 <div class="text-gray-600">
-  Last updated Tuesday, March 30, 2021.
+  Last updated Friday, April 2, 2021.
 </div>
 
 <div class="overflow-x-auto mt-2">
   <table class="border-collapse border border-gray-400">
     <thead>
       <tr>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Seller</th>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Title</th>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Location</th>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Created on</th>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Price</th>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Retail</th>
-        <th class="border-collapse border border-gray-400 px-2 py-1 cursor-pointer">Discount</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Seller</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Title</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Location</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Account <br>created on</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Price</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Retail</th>
+        <th class="border-collapse border border-gray-400 px-3 py-2 cursor-pointer">Discount</th>
       </tr>
     </thead>
     <tbody>
     {% for seller in site.data.sellers %}
       <tr>
-        <td class="border-collapse border border-gray-400 px-2 py-1">
-          <a href="{{ seller.profile }}" target="_blank" class="text-blue-700 hover:underline">
+        <td class="border-collapse border border-gray-400">
+          <a href="{{ seller.profile }}" target="_blank" class="block px-3 py-2 text-blue-700 hover:underline">
             {{ seller.username }}
           </a>
         </td>
-        <td class="border-collapse border border-gray-400 px-2 py-1 whitespace-nowrap">{{ seller.title }}</td>
-        <td class="border-collapse border border-gray-400 px-2 py-1 whitespace-nowrap">{{ seller.location }}</td>
-        <td class="border-collapse border border-gray-400 px-2 py-1 whitespace-nowrap">{{ seller.created_on }}</td>
-        <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.price }}</td>
-        <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.retail }}</td>
-        <td class="border-collapse border border-gray-400 px-2 py-1">{{ seller.discount }}</td>
+        <td class="border-collapse border border-gray-400 px-3 py-2 whitespace-nowrap">{{ seller.title }}</td>
+        <td class="border-collapse border border-gray-400 px-3 py-2 whitespace-nowrap">{{ seller.location }}</td>
+        <td class="border-collapse border border-gray-400 px-3 py-2 whitespace-nowrap">{{ seller.created_on }}</td>
+        <td class="border-collapse border border-gray-400 px-3 py-2">{{ seller.price }}</td>
+        <td class="border-collapse border border-gray-400 px-3 py-2">{{ seller.retail }}</td>
+        <td class="border-collapse border border-gray-400 px-3 py-2">{{ seller.discount }}</td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
+</div>
+
+<div class="text-gray-600 mt-2">
+  {{ site.data.sellers | size }} sellers with negative feedback for fake or counterfeit golf grips.
 </div>
