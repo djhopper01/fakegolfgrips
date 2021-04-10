@@ -4,8 +4,6 @@
   title: NEW 13x Golf Pride MCC Plus4 +4 Align Golf Grips STANDARD - Gray USA
   price: $62.99
   created_on: October 19, 2020
-  retail: $149.37
-  discount: 58%
 
 - username: reinarseeker
   profile: https://www.ebay.com/usr/reinarseeker
@@ -13,8 +11,6 @@
   title: 13 x Golf Pride STANDARD New Decade MCC Multicompound Platinum Grips Green/Grey
   price: $56.99
   created_on: August 17, 2020
-  retail: $136.37
-  discount: 58%
 
 - username: jobo_7622
   profile: https://www.ebay.com/usr/jobo_7622
@@ -22,8 +18,7 @@
   title: 13X Blue Golf Pride New Decade Multicompound Whiteout Golf Club Grips STANDARD
   price: $59.99
   created_on: December 8, 2020
-  retail: $136.37
-  discount: 56%
+  deleted: true
 
 - username: lonaubdfahf
   profile: https://www.ebay.com/usr/lonaubdfahf
