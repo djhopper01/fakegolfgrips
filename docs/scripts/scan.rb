@@ -12,7 +12,10 @@ FEEDBACK = "https://www.ebay.com/fdbk/feedback_profile/%s?filter=feedback_page:R
 BASE_WAIT = 10
 WAIT_VARIANCE = 60
 MATCHING_PATTERNS = [
-  "fake"
+  "fake",
+  "counterfeit",
+  "smell",
+  "knock off"
 ]
 SUSPECTS_FILE = File.join(ROOT, "_data", "suspects.yml")
 
@@ -21,6 +24,8 @@ say "The current path is #{ROOT}\n"
 suspects = YAML.load_file(SUSPECTS_FILE)
 usernames = suspects.map { |s| s["username"] }
 say "Current suspects are #{usernames.join(", ")}.\n"
+
+confirmed = []
 
 usernames.each do |username|
   random_wait = BASE_WAIT + rand(WAIT_VARIANCE).to_i
@@ -32,14 +37,23 @@ usernames.each do |username|
   url = FEEDBACK % username
   say "Fetching #{url}\n"
 
-  html = URI.open(url)
+  html = URI.open(url, "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:86.0) Gecko/20100101 Firefox/86.0")
   doc = Nokogiri::HTML(html)
 
   MATCHING_PATTERNS.each do |pattern|
-    if doc.css(".card__comment").text.include?(pattern)
+    if doc.css(".card__comment").text.match?(Regexp.new(pattern, "i"))
+      confirmed << username
       say "#{username} confirmed: #{pattern}.\n"
     end
   end
 
   say "Done.\n\n"
+end
+
+if confirmed.length > 0
+  say "#{confirmed.length} suspects confirmed.\n"
+
+  confirmed.each do |username|
+    say "View #{FEEDBACK % username}."
+  end
 end
