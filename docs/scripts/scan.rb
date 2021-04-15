@@ -22,7 +22,7 @@ SUSPECTS_FILE = File.join(ROOT, "_data", "suspects.yml")
 say "The current path is #{ROOT}\n"
 
 suspects = YAML.load_file(SUSPECTS_FILE)
-usernames = suspects.map { |s| s["username"] }
+usernames = suspects.map { |s| s["username"] }.shuffle
 say "Current suspects are #{usernames.join(", ")}.\n"
 
 confirmed = []
