@@ -51,9 +51,9 @@ usernames.each do |username|
 end
 
 if confirmed.length > 0
-  say "#{confirmed.length} suspects confirmed.\n"
+  say "#{confirmed.length} suspects confirmed.\n\n"
 
-  confirmed.each do |username|
-    say "View #{FEEDBACK % username}."
+  confirmed.uniq.each do |username|
+    say "View #{FEEDBACK % username}.\n"
   end
 end
